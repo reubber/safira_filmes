@@ -1,0 +1,91 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> {%block title%}{%endblock%}</title>
+        <script src="{% static 'js/ism-2.2.min.js' %}" ></script>
+        <script src="https://unpkg.com/ionicons@4.5.9-1/dist/ionicons.js"></script>
+        <meta name="descripition" content="Site especializado em Filmes, séries e animes antigos e atuais.">
+        <meta name="keywords" content="Site de filmes online">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Raul e Reubber">
+        <link rel="stylesheet" href="{% static 'css/my-slider.css' %}" >
+        <link rel="stylesheet"  href="{% static 'css/style.css' %}" >
+        <link rel="stylesheet"  href="{% static 'css/bootstrap.css' %}" >
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="https://unpkg.com/ionicons@4.5.9-1/dist/css/ionicons.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="icon"  href="{% static 'imagens/icon.png' %}" >
+    </head>
+    <body>
+        <header class="cabecalho">
+            <a hreft="index.html"><h1 class="logo">Safira - Filmes, Séries e Animes.</h1></a>
+            <button class="btn-menu"> <ion-icon name="list-box"></ion-icon></button>
+            <nav class="menu">
+                <a class="btn-close"> <ion-icon name="close-circle-outline"></ion-icon> </a>
+                <ul>
+                    <li><a href="#"> Inicio </a></li>
+                    <li><a href="#"> Destaques </a></li>
+                    <li><a href="#"> Ultimos Lançamentos </a></li>
+                    <li><a href="#"> Quem Somos? </a></li>
+                </ul>
+        </header>
+        <div class='slide'>
+            <div class="ism-slider" data-transition_type="fade" data-radio_type="thumbnail" id="my-slider">
+              <ol>
+                <li>
+                        
+                  <img src="{% static 'imagens/slides/_u/1560782538881_40993.jpg' %}">
+                  <div class="ism-caption ism-caption-0" data-delay='200'>John Wick: Capitulo 3.</div>
+                </li>
+                <li>
+                        
+                  <img src="{% static 'imagens/slides/_u/1560782743349_155391.jpg' %}">
+                  <div class="ism-caption ism-caption-0">Alladin 2019.</div>
+                </li>
+                <li>
+                  <img src="{% static 'imagens/slides/_u/1560782819971_489099.jpg' %}">
+                  <div class="ism-caption ism-caption-0">The Rain: 2 Temporada.</div>
+                </li>
+              </ol>
+            </div>
+            <p class="ism-badge" id="my-slider-ism-badge"><a class="ism-link" href="http://imageslidermaker.com" rel="nofollow"></a></p>
+        </div>
+        <div class="container">
+            {%block content%}{%endblock%}
+        </div>
+
+        <section class="newsletter">
+            <h2> Inscreva-se agora! </h2>
+            <h3> Receba os ultimos lançamentos de filmes e séries </h3>
+            <form>
+                <input type="email" name="email" placeholder="Digite o seu email.">
+                <button> Registrar </button>
+            </form>
+        </section>
+
+        <footer class="footer">
+            <div class="social-icons">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+            <p class="copyright">
+                Copyright © Raul e Reubber desenvolvimentos 2019. Todos os direitos reservados.
+            </p>
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+        $(".btn-menu").click(function(){
+            $(".menu").show();
+        });
+        $(".btn-close").click(function(){
+            $(".menu").hide();
+        });
+        </script>
+    </body>
+</html>

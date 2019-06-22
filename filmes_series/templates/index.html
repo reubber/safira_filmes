@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Meus Filmes{% endblock %}
+<img src="{{item.cover}}" alt="...">
+{% block content %}
+{%for filme in filmes%}
+<p>{{ filme.title }}</p>
+<p>{{ filme.description}}</p>
+<p>{{ filme.year}}</p>
+<p>{{ filme.genre}}</p>
+<img src={{filme.cover.url}} alt="">
+<p></p>
+{%endfor%}
+{% endblock %}
