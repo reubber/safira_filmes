@@ -9,6 +9,7 @@ pylint = "*"
 autopep8 = "*"
 pygraphviz = "*"
 pydotplus = "*"
+pylint-django = "*"
 
 [packages]
 django = "*"

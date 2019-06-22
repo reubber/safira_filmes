@@ -1,0 +1,17 @@
+
+{% block content %}
+
+<h2><a href="{% url 'filme_list' %}">Safira Administrador</a></h2>
+
+<ul>
+    {% for filme in object_list %}
+    <li>{{ filme.title }}  ({{ filme.year }} Ano)
+    <a href="{% url 'filme_edit' filme.pk %}">editar</a>
+    <a href="{% url 'filme_delete' filme.pk %}">deletar</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'filme_new' %}">Novo</a>
+
+{% endblock %}
