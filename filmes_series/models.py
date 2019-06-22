@@ -5,8 +5,8 @@ from django.db import models
 
 class Filme(models.Model):
     GENRE_CHOICE = [
-        ('ACAO', 'Ação'),
         ('COMEDIA', 'Comédia'),
+        ('ACAO', 'Ação'),
         ('HORROR', 'Horror'),
         ('ROMANCE', 'Romance'),
         ('DOCUMENTARIO', 'Documentário'),
