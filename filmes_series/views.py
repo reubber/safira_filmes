@@ -24,29 +24,34 @@ def criar_filmes(request):
 
 
 def pagina_inicial(request):
-     if request.method == "GET":
-         filmes = Filme.objects.all()
-         return render(request, 'index.html', {"filmes": filmes} )
+    if request.method == "GET":
+        filmes = Filme.objects.all()
+        return render(request, 'index.html', {"filmes": filmes})
 
 
 def filme_update(request, pk, template_name='edit.html'):
     filme = get_object_or_404(Filme, pk=pk)
-    form = FilmeForm(request.POST or None, instance=filme )
+    form = FilmeForm(request.POST or None, instance=filme)
     if form.is_valid():
         form.save()
         return redirect('/filmeteste')
-    return render(request, template_name, {'form':form})
+    return render(request, template_name, {'form': form})
 
 
 def filme_delete(request, pk, template_name='delete.html'):
-    filme = get_object_or_404(Filme, pk=pk)    
-    if request.method=='POST':
+    filme = get_object_or_404(Filme, pk=pk)
+    if request.method == 'POST':
         filme.delete()
         return redirect('/filmeteste')
-    return render(request, template_name, {'object':filme })
+    return render(request, template_name, {'object': filme})
+
 
 def filme_list(request, template_name='filme_list.html'):
-    filme  = Filme.objects.all() # pega todos os filmes
+    filme = Filme.objects.all()  # pega todos os filmes
     data = {}
-    data['object_list'] = filme 
-    return render(request, template_name, {'object_list': filme })
+    data['object_list'] = filme
+    return render(request, template_name, {'object_list': filme})
+
+
+def quem_somos(request):
+    return render(request, "quem_somos.html")

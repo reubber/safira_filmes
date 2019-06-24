@@ -1,10 +1,13 @@
-{% block content %}
+{% load staticfiles %}
+{% block delete_filmes %}
+<link rel="stylesheet"  href="{% static 'css/delete_filmes.css' %}">
 
-<h2><a href="{% url 'filme_list' %}">Books FBV</a>: Delete?</h2>
+<div class="container">
+<h2><a href="{% url 'filme_list' %}">Excluir Filme</a></h2>
 
 <form method="post">{% csrf_token %}
-    Você tem certeza que deseja delatar "{{ object }}" ?<br/>
+   <p> Você tem certeza que deseja delatar "{{ object }}" ?</p><br/>
     <input type="submit" value="Delete" />
 </form>
-
+</div>
 {% endblock %}

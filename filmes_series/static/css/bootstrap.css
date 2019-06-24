@@ -481,6 +481,10 @@ mark,
   height: auto;
 }
 
+
+
+
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -545,12 +549,14 @@ pre code {
   overflow-y: scroll;
 }
 
-.container {
+.container-fluid{
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  
+
 }
 
 @media (min-width: 576px) {
@@ -592,6 +598,8 @@ pre code {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  background-color: red;
+ 
 }
 
 .no-gutters {

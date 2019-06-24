@@ -1,14 +1,32 @@
 {% extends "base.html" %}
-{% block title %}Meus Filmes{% endblock %}
-<img src="{{item.cover}}" alt="...">
+{% load staticfiles %}
+
 {% block content %}
-{%for filme in filmes%}
-<h3>{{ filme.title }}</h3>
-<p>{{ filme.pk }}</p>
-<p>{{ filme.description}}</p>
-<p>{{ filme.year}}</p>
-<p>{{ filme.genre}}</p>
-<img src={{filme.cover.url}} alt="">
-<p></p>
-{%endfor%}
-{% endblock %}
+
+
+			<<div class="page-header">
+				<h1>Filmes</h1>
+			</div>>
+			<div class="row">
+					<!-- <div class="col-sm-6 col-md-4"> -->
+						<div class="meu-container">
+                                {%for filme in filmes%}
+                                <div>
+                                <img src={{filme.cover.url}} alt="">
+                               <section>
+                                <h2 id="titulo">{{ filme.title }}</h2>
+                                <p>{{ filme.description}}
+                               <br> {{ filme.year}}
+                               <br> <p id="genero">{{ filme.genre}}</p>
+                               </section>
+                                <p><a href="#" class="btn btn-primary" role="button">Assistir</a> </p>
+                            </div>
+                                {%endfor%}
+							</div>
+					<!-- </div> -->
+            </div>
+{% endblock %}  
+            
+            
+           
+        
